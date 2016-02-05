@@ -9,34 +9,34 @@
     <!-- Favicon -->
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet" />
   </head>
   <body>
     <header class="text-center"><h1><b>Cursos UFPB</b></h1></header>
     <section>
-      <div ng-controller="CourseController as courseController">
+      <div ng-controller="IndexController as indexController">
         <div class="row">
           <div class="col-md-3"></div>
           <div class="col-md-6 text-center">
             <div class="input-group">
               <div class="input-group-btn filter">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{courseController.filterCenter.name}}<span class="caret"></span></button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{facultyFilter.name}}<span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <li ng-repeat="c in courseController.centers" ng-click="courseController.filterCenter = c"><a href="#">{{c.name}}</a></li>
+                  <li ng-repeat="c in faculties" ng-click="setFacultyFilter(c)"><a href="#">{{c.name}}</a></li>
                 </ul>
               </div>
-              <input type="search" class="form-control" ng-model="q" placeholder="Filtrar cursos..."/>
+              <input type="search" class="form-control" ng-model="textFilter" placeholder="Filtrar cursos..."/>
             </div>
             <div class="row classes">
-              <div class="col-xs-1 no-padding text-center"><span class="carousel-arrow glyphicon glyphicon-chevron-left" aria-hidden="true" ng-disabled="courseController.currentPage == 0" ng-click="courseController.dec()"></span></div>
+              <div class="col-xs-1 no-padding text-center"><button class="carousel-arrow glyphicon glyphicon-chevron-left" aria-hidden="true" ng-disabled="currentPage == 0" ng-click="dec()"></button></div>
               <div class="col-xs-10">
                 <div class="list-group">
-                  <a href="#" class="list-group-item course" ng-repeat="course in courseController.courses | filter: q | filter:{center: courseController.filterCenter.id} | limitTo: 5">{{course.name}}</a>
+                  <a href="#" class="list-group-item course" ng-repeat="program in programs | filter: textFilter | filter: facultyFilter.id | startFrom: currentPage*pageSize | limitTo: pageSize">{{program.name}}</a>
                 </div>
               </div>
-              <div class="col-xs-1 no-padding text-center"><span class="carousel-arrow glyphicon glyphicon-chevron-right" aria-hidden="true" ng-disabled="courseController.currentPage >= getData().length/4" ng-click="courseController.inc()"></span></div>
+              <div class="col-xs-1 no-padding text-center"><button class="carousel-arrow glyphicon glyphicon-chevron-right" aria-hidden="true" ng-disabled="currentPage >= getData().length/pageSize - 1 " ng-click="inc()"></button></div>
             </div>
           </div>
           <div class="col-md-3"></div>
@@ -60,7 +60,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
-    <script src="js/course.service.js"></script>
-    <script src="js/course.controller.js"></script>
+    <script src="js/index.service.js"></script>
+    <script src="js/index.controller.js"></script>
   </body>
 </html>

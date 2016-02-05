@@ -45,6 +45,13 @@ section .input-group input {
 	font-size: 16px;
 }
 
+section button {
+	background: none;
+	border: none;
+	outline: none;
+	padding: 0;
+}
+
 footer {
   background-color: #0e3d72;
   color: #fff;
