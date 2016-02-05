@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR" prefix="og: http://ogp.me/ns#" ng-app="app">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- OGP meta tags -->
+
+    <!-- Favicon -->
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="text-center"><h1><b>Cursos UFPB</b></h1></header>
+    <section>
+      <div ng-controller="CourseController as courseController">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6 text-center">
+            <div class="input-group">
+              <div class="input-group-btn filter">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{courseController.filterCenter.name}}<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li ng-repeat="c in courseController.centers" ng-click="courseController.filterCenter = c"><a href="#">{{c.name}}</a></li>
+                </ul>
+              </div>
+              <input type="search" class="form-control" ng-model="q" placeholder="Filtrar cursos..."/>
+            </div>
+            <div class="row classes">
+              <div class="col-xs-1 no-padding text-center"><span class="carousel-arrow glyphicon glyphicon-chevron-left" aria-hidden="true" ng-disabled="courseController.currentPage == 0" ng-click="courseController.dec()"></span></div>
+              <div class="col-xs-10">
+                <div class="list-group">
+                  <a href="#" class="list-group-item course" ng-repeat="course in courseController.courses | filter: q | filter:{center: courseController.filterCenter.id} | limitTo: 5">{{course.name}}</a>
+                </div>
+              </div>
+              <div class="col-xs-1 no-padding text-center"><span class="carousel-arrow glyphicon glyphicon-chevron-right" aria-hidden="true" ng-disabled="courseController.currentPage >= getData().length/4" ng-click="courseController.inc()"></span></div>
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="row text-center">
+        <div class="col-md-4"></div>
+        <div class="col-md-2">
+          <div class="contributors"><b><p><a href="#">Contribuidores</a></p></b></div>
+        </div>
+        <div class="col-md-2">
+          <div class="ufpb"><b><p><a href="http://www.ufpb.br">UFPB</a></p></b></div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+    <script src="js/course.service.js"></script>
+    <script src="js/course.controller.js"></script>
+  </body>
+</html>

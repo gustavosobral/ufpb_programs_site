@@ -1,0 +1,95 @@
+.row{
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* General Configs */
+
+body {
+	font-family: 'Lato', sans-serif;
+	background-color: #0e3d72;
+	font-size: 18px;
+}
+
+h1 {
+	color: #0e3d72;
+}
+
+/* Sections */
+
+header {
+	background-color: #C8CFE2;
+	min-height: 100px;
+}
+
+header h1 {
+	font-size: 50px;
+	margin: 0;
+	padding: 20px 0;
+}
+
+section {
+	background-color: #fff;
+	padding: 40px 0;
+	background-image: url(/img/logo_ufpb.png);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+section .input-group {
+	width: 100%;
+	margin: 20px 0 40px 0;
+}
+
+section .input-group input {
+	font-size: 16px;
+}
+
+footer {
+  background-color: #0e3d72;
+  color: #fff;
+  min-height: 60px;
+  margin-top: 30px;
+}
+
+/* Items */
+
+.no-padding {
+	padding: 0;
+}
+
+.classes {
+	height: 355px;
+}
+
+.carousel-arrow {
+	font-size: 35px;
+  margin-top: 152px;
+}
+
+.contributors a {
+	color: #f27a24;
+	text-decoration: none;
+}
+
+.ufpb a {
+	color: #f27a24;
+	text-decoration: none;
+}
+
+.course {
+	margin: 20px 0;
+}
+
+.filter button span {
+	margin-left: 5px !important;
+}
+
+#logo-ufpb {
+	height: 100px;
+	margin: 20px 0;
+}
+
+.list-group-item {
+	border-radius: 4px;
+}
