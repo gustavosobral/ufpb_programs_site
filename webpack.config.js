@@ -19,9 +19,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.jpg$/, loader: 'file-loader' },
-      { test: /\.png$/, loader: 'file-loader' },
-      { test: /\.svg$/, loader: 'file-loader' },
+      { test: /\.(jpg|png|svg)$/, loader: 'url-loader' },
       { test: /\.css$/, loaders: ['style', 'css'] },
       { test: /\.html$/, loaders: ['ngtemplate', 'html?root=true&interpolate'] },
       { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
