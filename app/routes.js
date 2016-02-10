@@ -1,4 +1,4 @@
-var curriculaTemplate = require('./curricula/curricula.template.html');
+var curriculaTemplate = require('curricula/curricula.template.html');
 
 /* @ngInject */
 function Routes($stateProvider, $urlRouterProvider) {

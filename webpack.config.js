@@ -1,8 +1,10 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+require('es6-promise').polyfill();
+
 module.exports = {
-  entry: path.join(__dirname, 'app/index.js'),
+  entry: path.join(__dirname, 'app', 'index.js'),
   output: {
     filename: 'bundle.js',
     path: path.join(__dirname, 'build')
@@ -10,11 +12,18 @@ module.exports = {
   resolve: {
     root: [
       path.resolve('./app')
+    ],
+    moduleDirectories: [
+      'node_modules'
     ]
   },
   module: {
     loaders: [
-      { test: /\.html$/, loaders: ['ngtemplate', 'html'] },
+      { test: /\.jpg$/, loader: 'file-loader' },
+      { test: /\.png$/, loader: 'file-loader' },
+      { test: /\.svg$/, loader: 'file-loader' },
+      { test: /\.css$/, loaders: ['style', 'css'] },
+      { test: /\.html$/, loaders: ['ngtemplate', 'html?root=true&interpolate'] },
       { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
       { test: /\.js$/, loaders: ['ng-annotate'] }
     ]
@@ -22,7 +31,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'app/index.html'
+      template: path.join(__dirname, 'app', 'index.template.ejs')
     })
   ]
 };
