@@ -19,11 +19,12 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.(jpg|png|svg)$/, loader: 'url-loader' },
-      { test: /\.css$/, loaders: ['style', 'css'] },
+      { test: /\.js$/, loaders: ['ng-annotate'] },
       { test: /\.html$/, loaders: ['ngtemplate', 'html?root=true&interpolate'] },
+      { test: /\.css$/, loaders: ['style', 'css'] },
       { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
-      { test: /\.js$/, loaders: ['ng-annotate'] }
+      { test: /\.(jpg|png)$/, loader: 'url-loader' },
+      { test: /\.svg$/, loader: 'file-loader' }
     ]
   },
   plugins: [

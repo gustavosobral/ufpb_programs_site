@@ -18,7 +18,7 @@ app.config(route);
 
 /* @ngInject */
 function SetTitle($rootScope) {
-  $rootScope.APP_TITLE = 'UFPB Programs';
+  $rootScope.APP_TITLE = 'UFPB Cursos';
 }
 
 app.run(SetTitle);
