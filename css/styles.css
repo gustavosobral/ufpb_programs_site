@@ -1,102 +1,47 @@
-.row{
-	margin-left: 0;
-	margin-right: 0;
+html {
+  font-family: Roboto, sans-serif;
 }
-
-/* General Configs */
 
 body {
-	font-family: 'Lato', sans-serif;
-	background-color: #0e3d72;
-	font-size: 18px;
+  background-image: url(/img/background/sos.png);
 }
 
-h1 {
-	color: #0e3d72;
+.text-center {
+  text-align: center;
 }
 
-/* Sections */
-
-header {
-	background-color: #C8CFE2;
-	min-height: 100px;
+.autocomplete-custom-template li {
+  border-bottom: 1px solid #ccc;
+  height: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  white-space: normal;
 }
 
-header h1 {
-	font-size: 50px;
-	margin: 0;
-	padding: 20px 0;
+.autocomplete-custom-template li:last-child {
+  border-bottom-width: 0;
 }
 
-section {
-	background-color: #fff;
-	padding: 40px 0;
-	background-image: url(/img/logo_ufpb.png);
-  background-position: right bottom;
-  background-repeat: no-repeat;
+.autocomplete-custom-template .item-title,
+.autocomplete-custom-template .item-metadata {
+  display: block;
+  line-height: 2;
 }
 
-section .input-group {
-	width: 100%;
-	margin: 20px 0 40px 0;
+.autocomplete-custom-template .item-title md-icon {
+  height: 18px;
+  width: 18px;
 }
 
-section .input-group input {
-	font-size: 16px;
+md-card {
+  margin-top: 150px;
 }
 
-section button {
-	background: none;
-	border: none;
-	outline: none;
-	padding: 0;
+md-card-header {
+  background-color: rgb(63,81,181);
+  color: rgba(255,255,255,0.87);
 }
 
-footer {
-  background-color: #0e3d72;
-  color: #fff;
-  min-height: 60px;
-  margin-top: 30px;
-}
-
-/* Items */
-
-.no-padding {
-	padding: 0;
-}
-
-.classes {
-	height: 355px;
-}
-
-.carousel-arrow {
-	font-size: 35px;
-  margin-top: 152px;
-}
-
-.contributors a {
-	color: #f27a24;
-	text-decoration: none;
-}
-
-.ufpb a {
-	color: #f27a24;
-	text-decoration: none;
-}
-
-.course {
-	margin: 20px 0;
-}
-
-.filter button span {
-	margin-left: 5px !important;
-}
-
-#logo-ufpb {
-	height: 100px;
-	margin: 20px 0;
-}
-
-.list-group-item {
-	border-radius: 4px;
+.footer {
+  margin-top: 50px;
 }

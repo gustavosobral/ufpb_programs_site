@@ -1,8 +1,8 @@
 var angular = require('angular');
-var CurriculaController = require('./curricula_controller.js')
+var services = require('services');
+var curricula = angular.module('ufpbPrograms.curricula', [services]);
 
-var curricula = angular.module('ufpbPrograms.curricula', []);
-
+var CurriculaController = require('./curricula.controller.js')
 curricula.controller('CurriculaController', CurriculaController);
 
-module.exports = curricula;
+module.exports = curricula.name;

@@ -12,11 +12,13 @@ module.exports = {
       path.resolve('./app')
     ]
   },
-  loaders: [
-    { test: /\.html$/, loaders: ['ngtemplate', 'html'] },
-    { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
-    { test: /\.js$/, loaders: ['ng-annotate'] }
-  ],
+  module: {
+    loaders: [
+      { test: /\.html$/, loaders: ['ngtemplate', 'html'] },
+      { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
+      { test: /\.js$/, loaders: ['ng-annotate'] }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
