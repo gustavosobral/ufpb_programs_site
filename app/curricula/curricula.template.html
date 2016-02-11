@@ -40,7 +40,7 @@
         </form>
       </md-content>
       <md-card-actions layout="row" layout-align="end center">
-        <md-button class="md-raised md-primary" ng-click="index.click()">OK</md-button>
+        <md-button class="md-raised md-primary" ng-click="index.goProgram()">OK</md-button>
       </md-card-actions>
     </md-card-content>
   </md-card>
@@ -51,7 +51,7 @@
 <div layout="row" class="footer">
   <div flex="40"></div>
   <div flex="20" class="text-center">
-    <md-button md-no-ink class="md-primary" ng-click="showAdvanced($event)" flex="50" flex-gt-md="auto">
+    <md-button md-no-ink class="md-primary" ng-click="index.showTeamDialog()" flex="50" flex-gt-md="auto">
       Contribuidores
     </md-button>
     <a href="http://www.ufpb.br"><md-button md-no-ink class="md-primary" target="_blank" flex="50" flex-gt-md="auto">
