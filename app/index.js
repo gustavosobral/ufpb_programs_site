@@ -8,13 +8,13 @@ require('assets/scss/main.scss');
 var curricula = require('curricula');
 var services = require('services');
 
-var route = require('./routes.js');
+var Route = require('./routes.js');
 
 var app = angular.module('ufpbPrograms', [
   curricula, services, ngMaterial, uiRouter
 ]);
 
-app.config(route);
+app.config(Route);
 
 /* @ngInject */
 function SetTitle($rootScope) {
