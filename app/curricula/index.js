@@ -1,5 +1,6 @@
 var angular = require('angular');
 var services = require('services');
+// var teamDialog = require('teamDialog');
 var curricula = angular.module('ufpbPrograms.curricula', [services]);
 
 var CurriculaController = require('./curricula.controller.js')

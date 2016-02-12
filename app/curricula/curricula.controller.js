@@ -1,14 +1,11 @@
-var teamDialogTemplate = require('./teamDialog.template.html');
-
 /* @ngInject */
-function CurriculaController($log, $filter, $mdDialog, $mdMedia, DataService) {
+function CurriculaController($log, $filter, DataService) {
   var vm = this;
   vm.curricula = [];
 
   vm.querySearch = querySearch;
   vm.goProgram = goProgram;
   vm.showTeamDialog = showTeamDialog;
-  vm.cancelTeamDialog = cancelTeamDialog;
 
   activate();
 
@@ -43,20 +40,9 @@ function CurriculaController($log, $filter, $mdDialog, $mdMedia, DataService) {
   }
 
   function showTeamDialog() {
-    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
-    $mdDialog.show({
-      controller: CurriculaController,
-      controllerAs: 'curricula',
-      templateUrl: teamDialogTemplate,
-      parent: angular.element(document.body),
-      clickOutsideToClose: true,
-      fullscreen: useFullScreen
-    });
+    // TeamDialogService.open();
   }
 
-  function cancelTeamDialog() {
-    $mdDialog.cancel();
-  };
 }
 
 module.exports = CurriculaController;
