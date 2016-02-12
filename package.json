@@ -11,11 +11,19 @@
     "type": "git",
     "url": "https://github.com/gustavosobral/ufpb_programs_page.git"
   },
-  "author": "David Leite Guilherme <davidlguilherme@gmail.com>",
+  "author": "Gustavo Sobral <ghsobral@gmail.com>",
+  "contributors": [{
+    "name": "David Leite Guilherme",
+    "email": "davidlguilherme@gmail.com"
+  }],
   "license": "GPL",
   "bugs": {
     "url": "https://github.com/gustavosobral/ufpb_programs_page/issues"
   },
+  "keywords": [
+    "ufpb",
+    "sigaa"
+  ],
   "homepage": "https://github.com/gustavosobral/ufpb_programs_page",
   "devDependencies": {
     "css-loader": "^0.23.1",

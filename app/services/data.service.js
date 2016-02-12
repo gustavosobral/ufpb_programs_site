@@ -12,7 +12,12 @@ function DataService($http, $log) {
       .catch(getCurriculaFailed);
 
     function getCurriculaComplete(response) {
-      return response.data.curricula;
+      var curricula = response.data.curricula;
+      for (var i = curricula.length - 1; i >= 0; i--) {
+        curricula[i].name = curricula[i].name.split(" -")[0];
+        curricula[i].faculty = curricula[i].faculty.split(" (")[0];
+      };
+      return curricula;
     }
 
     function getCurriculaFailed(error) {
