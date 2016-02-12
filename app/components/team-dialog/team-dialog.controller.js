@@ -1,9 +1,9 @@
 /* @ngInject */
 function TeamDialogController($mdDialog) {
-	var vm = this;
-	vm.cancel = cancel;
+  var vm = this;
+  vm.cancel = cancel;
 
-	function cancel() {
+  function cancel() {
     $mdDialog.cancel();
   };
 }

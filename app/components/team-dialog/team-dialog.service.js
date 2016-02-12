@@ -7,8 +7,8 @@ function TeamDialogService($mdDialog, $mdMedia) {
     open: open
   };
 
-	function open() {
-		var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
+  function open() {
+    var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
     $mdDialog.show({
       controller: 'TeamDialogController',
       controllerAs: 'teamDialog',
@@ -17,7 +17,7 @@ function TeamDialogService($mdDialog, $mdMedia) {
       clickOutsideToClose: true,
       fullscreen: useFullScreen
     });
-	}
+  }
 }
 
 module.exports = TeamDialogService;
