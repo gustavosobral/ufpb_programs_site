@@ -6,12 +6,13 @@ require('angular-material/angular-material.css');
 require('assets/scss/main.scss');
 
 var curricula = require('curricula');
+var curriculum = require('curriculum');
 var services = require('services');
 
 var Route = require('./routes.js');
 
 var app = angular.module('ufpbPrograms', [
-  curricula, services, ngMaterial, uiRouter
+  curricula, curriculum, services, ngMaterial, uiRouter
 ]);
 
 app.config(Route);

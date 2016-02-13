@@ -1,0 +1,26 @@
+<div id="curriculum">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+    <md-toolbar-filler layout="" layout-align="center center">
+      <a href="#/"><md-icon md-svg-src="${require('assets/images/icons/ic-home-black-24px.svg')}" alt="Home"></md-icon></a>
+    </md-toolbar-filler>
+    <h2>
+      <span>{{ curriculumCtrl.curriculum.name }}</span>
+    </h2>
+    </div>
+  </md-toolbar>
+  <div layout="row">
+    <div ng-repeat="courses in curriculumCtrl.curriculum.courses" flex={{100 / curriculum.courses.length}} >
+      <md-card>
+        <md-card-content class="text-center">
+          <b>{{ courses[0].semester }}º</b>
+        </md-card-content>
+      </md-card>
+      <md-card ng-repeat="course in courses">
+        <md-card-content>
+          {{ course.name }}
+        </md-card-content>
+      </md-card>
+    </div>
+  </div>
+</div>
