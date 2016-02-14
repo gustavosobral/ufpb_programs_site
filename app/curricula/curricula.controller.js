@@ -10,9 +10,7 @@ function CurriculaController($log, $filter, $state, SigaaService, TeamDialogServ
   activate();
 
   function activate() {
-    return getCurricula().then(function() {
-      $log.info('Activated Curricula View');
-    });
+    getCurricula();
   }
 
   function getCurricula() {

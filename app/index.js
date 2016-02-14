@@ -1,25 +1,26 @@
-var angular = require('angular');
+var angular    = require('angular');
 var ngMaterial = require('angular-material');
-var uiRouter = require('angular-ui-router');
+var uiRouter   = require('angular-ui-router');
 
 require('angular-material/angular-material.css');
 require('assets/scss/main.scss');
 
 var curricula = require('curricula');
-var curriculum = require('curriculum');
-var services = require('services');
-
-var Route = require('./routes.js');
 
 var app = angular.module('ufpbPrograms', [
-  curricula, curriculum, services, ngMaterial, uiRouter
+  curricula, ngMaterial, uiRouter
 ]);
 
-app.config(Route);
+app.config(Routes);
+
+/* @ngInject */
+function Routes($urlRouterProvider) {
+  $urlRouterProvider.otherwise('/');
+}
+
+app.run(SetTitle);
 
 /* @ngInject */
 function SetTitle($rootScope) {
   $rootScope.APP_TITLE = 'UFPB Cursos';
 }
-
-app.run(SetTitle);
