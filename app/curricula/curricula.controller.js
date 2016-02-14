@@ -1,5 +1,5 @@
 /* @ngInject */
-function CurriculaController($log, $filter, DataService, TeamDialogService) {
+function CurriculaController($log, $filter, $state, SigaaService, TeamDialogService) {
   var vm = this;
   vm.curricula = [];
 
@@ -10,13 +10,11 @@ function CurriculaController($log, $filter, DataService, TeamDialogService) {
   activate();
 
   function activate() {
-    return getCurricula().then(function() {
-      $log.info('Activated Curricula View');
-    });
+    getCurricula();
   }
 
   function getCurricula() {
-    return DataService.getCurricula()
+    return SigaaService.getCurricula()
       .then(function(curricula) {
         vm.curricula = curricula;
     });
@@ -28,16 +26,13 @@ function CurriculaController($log, $filter, DataService, TeamDialogService) {
 
   function goProgram() {
     if(vm.selectedItem) {
-      $log.info('Item clicked: ' + vm.selectedItem.id);
-    } else {
-      $log.info('None item selected');
+      $state.go('curriculum', { id: vm.selectedItem.id });
     }
   }
 
   function showTeamDialog() {
     TeamDialogService.open();
   }
-
 }
 
 module.exports = CurriculaController;

@@ -11,7 +11,7 @@ function TeamDialogService($mdDialog, $mdMedia) {
     var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
     $mdDialog.show({
       controller: 'TeamDialogController',
-      controllerAs: 'teamDialog',
+      controllerAs: 'teamDialogCtrl',
       templateUrl: teamDialogTemplate,
       parent: angular.element(document.body),
       clickOutsideToClose: true,

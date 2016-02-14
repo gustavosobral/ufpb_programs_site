@@ -1,0 +1,13 @@
+.curriculum-flowchart {
+  .course-card {
+    &.is-prerequisite, &.is-next {
+      background-color: #ccc;
+    }
+
+    &:hover {
+      background-color: rgb(63,81,181);
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+    }
+  }
+}

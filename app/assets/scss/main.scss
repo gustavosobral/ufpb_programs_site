@@ -1,5 +1,6 @@
 html {
   font-family: Roboto, sans-serif;
+  background-image: url(~assets/images/background/sos.png);
 }
 
 body {
@@ -33,17 +34,17 @@ body {
   width: 18px;
 }
 
-md-card {
+.curricula md-card {
   margin-top: 150px;
 }
 
-md-card-header {
+.curricula md-card-header {
   background-color: rgb(63,81,181);
   color: rgba(255,255,255,0.87);
 }
 
-.footer {
-  margin-top: 50px;
+#team-dialog md-dialog-content md-icon:hover {
+  color: #3f51b5;
 }
 
 .team {
@@ -59,5 +60,27 @@ md-card-header {
 }
 
 .team p {
+  font-size: 14px;
+}
+
+#curriculum md-toolbar {
+  color: rgba(255,255,255,0.87);
+}
+
+#curriculum .md-toolbar-tools {
+  padding: 0;
+}
+
+#curriculum md-icon {
+  height: 64px;
+  width: 40px;
+}
+
+#curriculum md-card {
+  margin: 12px 8px;
+}
+
+#curriculum md-card-content {
+  padding: 8px;
   font-size: 14px;
 }

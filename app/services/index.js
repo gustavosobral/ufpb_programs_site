@@ -1,7 +1,8 @@
 var angular = require('angular');
+
 var services = angular.module('ufpbPrograms.services', []);
 
-var DataService = require('./data.service.js')
-services.factory('DataService', DataService);
+var SigaaService = require('./sigaa.service.js')
+services.factory('SigaaService', SigaaService);
 
 module.exports = services.name;
