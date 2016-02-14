@@ -1,5 +1,7 @@
 # UFPB Programs
 
+[![Build Status](https://api.travis-ci.org/gustavosobral/ufpb_programs_page.svg?branch=master)](https://travis-ci.org/gustavosobral/ufpb_programs_page)
+
 Application to provide useful features with a friendly experience for the UFPB Graduation Programs. Built using the Single Page Application (SPA) concept with AngularJS 1 framework and Webpack as a module bundler. The app is actually hosted on GitHub Pages:
 
 http://gustavosobral.github.io/ufpb_programs_page
