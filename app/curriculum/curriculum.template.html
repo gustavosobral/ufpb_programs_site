@@ -9,18 +9,5 @@
     </h2>
     </div>
   </md-toolbar>
-  <div layout="row">
-    <div ng-repeat="courses in curriculumCtrl.curriculum.courses" flex={{100 / curriculum.courses.length}} >
-      <md-card>
-        <md-card-content class="text-center">
-          <b>{{ courses[0].semester }}º</b>
-        </md-card-content>
-      </md-card>
-      <md-card ng-repeat="course in courses">
-        <md-card-content>
-          {{ course.name }}
-        </md-card-content>
-      </md-card>
-    </div>
-  </div>
+  <curriculum-flowchart curriculum="curriculumCtrl.curriculum"></curriculum-flowchart>
 </div>

@@ -2,9 +2,10 @@ var angular  = require('angular');
 var uiRouter = require('angular-ui-router');
 
 var services = require('services');
+var flowchart = require('components/curriculum-flowchart');
 
 var curriculum = angular.module('ufpbPrograms.curriculum', [
-  services, uiRouter
+  services, uiRouter, flowchart
 ]);
 
 var CurriculumController = require('./curriculum.controller.js');
