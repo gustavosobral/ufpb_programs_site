@@ -1,5 +1,5 @@
 <div class="curriculum-flowchart" layout="row">
-  <div ng-repeat="courses in component.curriculum.courses" flex={{100 / component.curriculum.courses.length}}>
+  <div ng-repeat="courses in curriculumFlowchartCtrl.curriculum.courses" flex={{100 / curriculumFlowchartCtrl.curriculum.courses.length}}>
     <md-card>
       <md-card-content class="text-center">
         <b>{{ courses[0].semester }}º</b>
@@ -9,10 +9,10 @@
       class="course-card"
       ng-repeat="course in courses"
       ng-class="{
-        'is-prerequisite': component.isPrerequisite(course),
-        'is-next': component.isNext(course)
+        'is-prerequisite': curriculumFlowchartCtrl.isPrerequisite(course),
+        'is-next': curriculumFlowchartCtrl.isNext(course)
       }"
-      ng-mouseover="component.onHoverCourse(course)">
+      ng-mouseover="curriculumFlowchartCtrl.onHoverCourse(course)">
       <md-card-content>
         {{ course.name }}
       </md-card-content>

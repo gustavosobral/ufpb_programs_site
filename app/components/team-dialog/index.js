@@ -1,4 +1,5 @@
 var angular = require('angular');
+
 var teamDialog = angular.module('ufpbPrograms.components.teamDialog', []);
 
 var TeamDialogController = require('./team-dialog.controller.js')

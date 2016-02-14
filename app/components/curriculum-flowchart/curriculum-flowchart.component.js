@@ -8,7 +8,7 @@ function CurriculumFlowchartComponent() {
     restrict: 'E',
     templateUrl: curriculumFlowchartTemplate,
     controller: CurriculumFlowchartComponentController,
-    controllerAs: 'component',
+    controllerAs: 'curriculumFlowchartCtrl',
     bindToController: true,
     scope: {
       curriculum: '='
@@ -16,21 +16,22 @@ function CurriculumFlowchartComponent() {
   }
 
   function CurriculumFlowchartComponentController() {
-    this.hoverCourse = null;
-    this.onHoverCourse = onHoverCourse;
-    this.isPrerequisite = isPrerequisite;
-    this.isNext = isNext;
+    var vm = this;
+    vm.hoverCourse = null;
+    vm.onHoverCourse = onHoverCourse;
+    vm.isPrerequisite = isPrerequisite;
+    vm.isNext = isNext;
 
     function onHoverCourse(course) {
-      this.hoverCourse = course;
+      vm.hoverCourse = course;
     }
 
     function isPrerequisite(course) {
-      return _isPrerequisite(this.hoverCourse, course);
+      return _isPrerequisite(vm.hoverCourse, course);
     }
 
     function isNext(course) {
-      return _isPrerequisite(course, this.hoverCourse);
+      return _isPrerequisite(course, vm.hoverCourse);
     }
 
     function _isPrerequisite(course, preCourse) {
@@ -38,8 +39,10 @@ function CurriculumFlowchartComponent() {
 
       var is = false;
       course.prerequisites.forEach(function (prereqId) {
-        is = prereqId == preCourse.id;
-        if (!is) return;
+        if(preCourse){
+          is = prereqId == preCourse.id;
+          if (!is) return;
+        }
       });
 
       return is;

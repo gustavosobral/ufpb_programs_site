@@ -23,7 +23,7 @@ module.exports = {
       { test: /\.html$/, loaders: ['ngtemplate', 'html?root=true&interpolate'] },
       { test: /\.css$/, loaders: ['style', 'css'] },
       { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
-      { test: /\.(jpg|png)$/, loader: 'url-loader' },
+      { test: /\.(jpg|png|ico)$/, loader: 'url-loader' },
       { test: /\.svg$/, loader: 'file-loader' }
     ]
   },
