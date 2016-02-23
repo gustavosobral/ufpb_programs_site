@@ -29,3 +29,6 @@ $ npm run build
 
 The app is consuming the [Unofficial UFPB SIGAA API](https://github.com/fernandobrito/ufpb_sigaa_api) hosted on Heroku.
 
+## Style Guide
+
+Our style guide is strongly inspired on this [Angular Style Guide](https://github.com/johnpapa/angular-styleguide) by JohnPapa.
