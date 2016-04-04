@@ -27,7 +27,7 @@ $ npm run build
 
 ## API
 
-The app is consuming the [Unofficial UFPB SIGAA API](https://github.com/fernandobrito/ufpb_sigaa_api) hosted on Heroku.
+The app is consuming the [Unofficial UFPB SIGAA API (Old)](https://github.com/fernandobrito/ufpb_sigaa_api_old) hosted on Heroku.
 
 ## Style Guide
 
