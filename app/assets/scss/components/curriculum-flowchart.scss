@@ -1,5 +1,32 @@
 .curriculum-flowchart {
+  overflow: auto;
+  height: calc(100vh - 107px);
+
+  /* Both cards */
+  md-card {
+    width: 130px;
+  }
+
+  .header-card {
+    height: 22px;
+    background: #cccccc;
+
+    md-card-content {
+      padding: 0px;
+      margin: auto;
+      font-size: 12px;
+    }
+  }
+
   .course-card {
+    margin: 8px 8px;
+    height: 60px;
+
+    md-card-content {
+      margin: auto;
+      font-size: 10px;
+    }
+
     &.is-prerequisite, &.is-next {
       background-color: #ccc;
     }

@@ -1,12 +1,12 @@
 <div class="curriculum-flowchart" layout="row">
-  <div ng-repeat="courses in curriculumFlowchartCtrl.curriculum.courses" flex={{100 / curriculumFlowchartCtrl.curriculum.courses.length}}>
-    <md-card>
+  <div ng-repeat="courses in curriculumFlowchartCtrl.curriculum.courses" >
+    <md-card class="header-card">
       <md-card-content class="text-center">
         <b>{{ courses[0].semester }}º</b>
       </md-card-content>
     </md-card>
     <md-card
-      class="course-card"
+      class="course-card text-center"
       ng-repeat="course in courses"
       ng-class="{
         'is-prerequisite': curriculumFlowchartCtrl.isPrerequisite(course),
