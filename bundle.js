@@ -64631,7 +64631,7 @@
 	/* @ngInject */
 	SigaaService.$inject = ["$http", "$log"];
 	function SigaaService($http, $log) {
-	  var url = 'http://ufpb-sigaa-api.herokuapp.com/api/curricula';
+	  var url = 'https://cursos-ufpb.herokuapp.com/api/curricula';
 
 	  return {
 	    getCurricula: getCurricula,
